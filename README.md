@@ -13,4 +13,12 @@ https://www.kaggle.com/datasets/shivanir23/sample-fruitsveg
 https://www.kaggle.com/datasets/kmader/food41
 https://www.kaggle.com/datasets/cristeaioan/ffml-dataset
 3. Download this repository to get the resnet18.onnx and Food_Recognition.py to your jetson nano.
-4. You can use python3 Food_Recognition.py to run this program. 
+4. Open up the Food_Recognition program.
+5. You will want to use the downloaded kaggle progarms and sort them into datasets under Food_Recognition: train/Healthy train/Unhealthy, test/Healthy test/Unhealthy, val/Healthy and val/Unhealthy, with an even amount in each dataset. There weren't any direct datasets to train purely on healthy/unhealthy, so it will be required to manually sort the images.
+6. Create a labels.txt file with two lines: 1 should be "Healthy", and 2 should be "Unhealthy". 
+7. To Re-train the model: Open up the docker container, and run this command to retrain the model:  python3 train.py --model-dir=models/Food_Recognition data/Food_Recognition
+8. After it is done training, you may export the model using: python3 onnx_export.py --model-dir=models/Food_Recognition
+9. To test this program on any image, exit the docker container, and in the project folder you may run a program with this format: resnet18.py --model=models/Food_Recognition/resnet18.onnx --input_blob=input_0 --output_blob=output_0 --labels=data/Food_Recognition/labels.txt ImageLocation/Sublocation/image.jpg output.jpg
+10. This code can also be used to run the prgram: python3 Food_Recognition.py
+
+Here is a video tutorial with a better example:
