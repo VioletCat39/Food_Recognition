@@ -12,6 +12,5 @@ There are a few crucial steps for making sure this program works.
 https://www.kaggle.com/datasets/shivanir23/sample-fruitsveg
 https://www.kaggle.com/datasets/kmader/food41
 https://www.kaggle.com/datasets/cristeaioan/ffml-dataset
-3. Download resnet18.onnx and Food_Recognition.py to your jetson nano.
+3. Download this repository to get the resnet18.onnx and Food_Recognition.py to your jetson nano.
 4. You can use python3 Food_Recognition.py to run this program. 
-
