@@ -18,7 +18,7 @@ https://www.kaggle.com/datasets/cristeaioan/ffml-dataset
 6. Create a labels.txt file with two lines: 1 should be "Healthy", and 2 should be "Unhealthy". 
 7. To Re-train the model: Open up the docker container, and run this command to retrain the model:  python3 train.py --model-dir=models/Food_Recognition data/Food_Recognition
 8. After it is done training, you may export the model using: python3 onnx_export.py --model-dir=models/Food_Recognition
-9. To test this program on any image, exit the docker container, and in the project folder you may run a program with this format: resnet18.py --model=models/Food_Recognition/resnet18.onnx --input_blob=input_0 --output_blob=output_0 --labels=data/Food_Recognition/labels.txt ImageLocation/Sublocation/image.jpg output.jpg
+9. To test this program on any image, exit the docker container, and in the project folder you may run a program with this format: imagenet.py --model=models/Food_Recognition/resnet18.onnx --input_blob=input_0 --output_blob=output_0 --labels=data/Food_Recognition/labels.txt ImageLocation/Sublocation/image.jpg output.jpg
 10. This code can also be used to run the prgram: python3 Food_Recognition.py
 
 Here is a video tutorial with a better example:
